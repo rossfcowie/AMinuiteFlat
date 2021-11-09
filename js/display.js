@@ -10,7 +10,9 @@ gamebox.innerHTML='';
         for(var j = 0; j < size; j++) {
             let t = `
             <div id = "content" class="content" onclick="clicked(`+i+`,`+j+`)">`+
-            board[i][j];
+            `<div class = content`+Math.abs(board[i][j]%5)+`>`
+            +board[i][j];
+             + `</div>`
              + `</div>`
             gamebox.innerHTML+= t;
             
@@ -22,12 +24,10 @@ gamebox.innerHTML='';
 module.exports = show;
 
     function clicked(x,y){
-        console.log("clicked");
         if(event.shiftKey){
             board[x][y]+=1;
         }else{
-            
             board[x][y]-=1;
         }
-        show(board);
     }
+    module.exports = clicked;
