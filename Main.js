@@ -1,4 +1,0 @@
-/*
-Developer: Ross Cowie (Arumage)
-
-*/
