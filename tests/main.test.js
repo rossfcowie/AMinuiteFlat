@@ -5,7 +5,7 @@ Developer: Ross Cowie (Arumage)
 
 
 const { test, expect } = require('@jest/globals')
-const create = require('./create')
+const create = require('../js/create')
 
 beforeEach(() => {
     jest.spyOn(global.Math, 'random').mockReturnValue(0.5);

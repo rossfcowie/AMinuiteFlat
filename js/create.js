@@ -22,6 +22,7 @@ for(var i = 0; i < x; i++) {
       }
       
   }
+  console.log(board);
   return board;
 }
 
