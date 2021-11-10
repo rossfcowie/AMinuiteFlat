@@ -2,10 +2,9 @@
 Developer: Ross Cowie (Arumage)
 
 */
-
-
 const { test, expect } = require('@jest/globals')
 const create = require('../js/create');
+const iswin = require('../js/win');
 
 beforeEach(() => {
     jest.spyOn(global.Math, 'random').mockReturnValue(0.5);
@@ -51,3 +50,14 @@ test('board maximum and minimum constraints true',() =>{
      expect(min).toBe(1);
    }
    )
+   test('Win function correctly detects victory',() =>{
+      let board =  [[2,2,2,2,2],[2,2,2,2,2],[2,2,2,2,2],[2,2,2,2,2],[2,2,2,2,2]];
+      expect(iswin(board)).toEqual(true);
+    }
+    )
+
+    test('Win function does not incorrectly detect victory',() =>{
+        let board =  [[2,3,3,2,2],[2,2,2,2,2],[2,2,2,2,2],[2,2,2,2,2],[2,2,2,2,2]];
+        expect(iswin(board)).toEqual(false);
+        }
+        )
