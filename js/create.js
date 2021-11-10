@@ -6,12 +6,12 @@ var x;
 var y;
 var board;
 
-function create(size){
+function create(size, difficulty){
 x=size;
 y=size;
 board = new Array(x);
-let total = size*size *2;
-big=3;
+let total = size*size *(difficulty+1);
+big=(difficulty+2) * difficulty;
 
 for(var i = 0; i < x; i++) {
     board[i] = new Array(y); 

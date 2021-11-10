@@ -16,13 +16,13 @@ afterEach(() => {
 
 test('creates a suitable game board when the function is called.',()=>{
     let board =  [[2,2,2,2,2],[2,2,2,2,2],[2,2,2,2,2],[2,2,2,2,2],[2,2,2,2,2]];
-    expect(create(5)).toEqual(board);
+    expect(create(5,1)).toEqual(board);
 });
 
 test('board contains exactly 50 total points',() =>{
 let size = 5
  let target = 50;
- let board = create(size);
+ let board = create(size,1);
  for(var i = 0; i < size; i++) {    
     for(var j = 0; j < size; j++) {
        target-= board[i][j];
@@ -35,7 +35,7 @@ test('board maximum and minimum constraints true',() =>{
     let max = 4;
     let min = 1;
     let cur = 2;
-    let board = create(5);
+    let board = create(5,1);
     for(var i = 0; i < 5; i++) {    
        for(var j = 0; j < 5; j++) {
            cur = board[i][j]
