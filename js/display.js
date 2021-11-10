@@ -1,5 +1,4 @@
 const gamebox = document.querySelector("#content");
-var board;
 
 function show(board){
     board = this.board;
@@ -17,14 +16,12 @@ gamebox.innerHTML='';
             gamebox.innerHTML+= t;
             
           }
-          
-      
     }
 }
 module.exports = show;
 
     function clicked(x,y){
-        if(event.shiftKey){
+        if(event.shiftkey){
             board[x][y]+=1;
         }else{
             board[x][y]-=1;
