@@ -10,14 +10,17 @@ function create(size, difficulty){
 x=size;
 y=size;
 board = new Array(x);
-let total = size*size *(difficulty+1);
-big=(difficulty+2) * difficulty;
+let total = size*size * (3 + (1 + difficulty));
+big=(1+difficulty) * difficulty;
+let cleared = 0;
+console.log(big);
 
 for(var i = 0; i < x; i++) {
     board[i] = new Array(y); 
     
     for(var j = 0; j < y; j++) {
-        board[i][j] = Math.floor(Math.random()* Math.min(big,total))+1; 
+        cleared++;
+        board[i][j] = Math.floor(Math.random()* Math.min(big,(total/((size*size)-cleared))))+1; 
        total-= board[i][j];
       }
       

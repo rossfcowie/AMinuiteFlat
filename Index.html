@@ -24,8 +24,14 @@
         countdown('countdown');
       }
       function reset(){
+        var difficulty;
+    
+        do {
+         difficulty =  parseInt(prompt("Please select a difficulty", "1"));
+        } while (difficulty == null)
         seconds = 60;
-        show(create(5));
+        show(create(8,difficulty));
+
       }
       function countdown(element) {
           interval = setInterval(function() {
