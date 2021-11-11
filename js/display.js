@@ -8,10 +8,8 @@ gamebox.innerHTML='';
         columns += " 1fr";
         for(var j = 0; j < size; j++) {
             let t = `
-            <div id = "content" class="content" onclick="clicked(`+i+`,`+j+`)">`+
-            `<div class = content`+Math.abs(board[i][j]%5)+`>`
+            <div id = "content" class="content" style = "background: rgba(`+parseInt(16*(3*board[i][j])%255)+`,` +parseInt(128+ 16*(5*board[i][j])%255)+`,` +parseInt(128+ 16*(7*board[i][j])%255)+`, `+0.3+`);" onclick="clicked(`+i+`,`+j+`)">`+
             +board[i][j];
-             + `</div>`
              + `</div>`
             gamebox.innerHTML+= t;
             
