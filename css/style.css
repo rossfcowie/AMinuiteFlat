@@ -20,6 +20,8 @@ body {
 .content {
   user-select: none;
   position: relative;
+  font-size: 200%;
+  font-style: bold;
   width: 75PX;
   height: 75PX;
   margin: auto;

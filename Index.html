@@ -20,24 +20,24 @@
       var seconds = 60;
       var borad;
       window.onload = function() {
-          reset();
         countdown('countdown');
+          reset();
       }
       function reset(){
-        var difficulty;
+        var difficulty = null;
     
         do {
          difficulty =  parseInt(prompt("Please select a difficulty", "1"));
         } while (difficulty == null)
         seconds = 60;
-        show(create(5,difficulty));
+        show(create(8,difficulty));
 
       }
       function countdown(element) {
           interval = setInterval(function() {
               var el = document.getElementById(element);
               if(iswin(board)){
-                el.innerHTML = "You win";                   
+                el.innerHTML = "You win, time left:"+seconds;                   
                       clearInterval(interval);
                       return;
               }
