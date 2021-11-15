@@ -14,58 +14,57 @@
       crossorigin="anonymous"
     />
     <title>A Minuite Flat</title>
-    <script src="js/create.js"></script>
-    <script>
-      var interval;
-      var seconds = 60;
-      var borad;
-      window.onload = function() {
-        countdown('countdown');
-          reset();
-      }
-      function reset(){
-        var difficulty = null;
-    
-        do {
-         difficulty =  parseInt(prompt("Please select a difficulty", "1"));
-        } while (difficulty == null)
-        seconds = 60;
-        show(create(8,difficulty));
 
-      }
-      function countdown(element) {
-          interval = setInterval(function() {
-              var el = document.getElementById(element);
-              if(iswin(board)){
-                el.innerHTML = "You win, time left:"+seconds;                   
-                      clearInterval(interval);
-                      return;
-              }
-              if(seconds == 0) {
-                      el.innerHTML = "You lose";                    
-                      clearInterval(interval);
-                      reset();
-                      return;
-
-              }
-              var second_text = seconds >= 1 ? 'seconds' : 'second';
-              el.innerHTML = seconds + ' ' + second_text + ' remaining';
-              seconds-=1;
-          }, 1000);
-      }
-      </script>
 
 
   </head>
 
   <body>
     <div id='countdown'></div>
-    <div id="content" class="grid-container" onClick="show(board)"> <!-- click on images that take user to next page -->
+    <div id="content" class="grid-container" onClick="show(board)"> 
 
     </div>
 
-       
-    </body>
+    <script src="js/create.js"></script>
     <script src="js/display.js"></script>
     <script src="js/win.js"></script>
+    <script>
+
+      window.onload = function() {
+          reset();
+      }
+      function reset(){
+        var difficulty = null;
+    
+        countdown();
+        do {
+         difficulty =  parseInt(prompt("Please select a difficulty", "1"));
+        } while (difficulty == null)
+        seconds = 60;
+        gridsetup(8);
+        show(create(8,difficulty));
+      
+      }
+      function countdown() {
+    interval = setInterval(function() {
+        
+        if(iswin(board)){
+                win(seconds);
+                return;
+        }
+        if(seconds == 0) {
+                loss(` time's up.`);
+                return;
+
+        }
+        var second_text = seconds >= 1 ? 'seconds' : 'second';
+        timebox.innerHTML = seconds + ' ' + second_text + ' remaining';
+        seconds-=1;
+    }, 1000);
+}
+      
+      </script>   
+    </body>
+
+
     </html>

@@ -4,6 +4,16 @@ body {
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
+.alert{
+  text-align: center;
+  font-size: 13.8em;
+  color: rgb(255, 255, 255);
+	text-shadow:
+		-1px -1px 0 #000,
+		1px -1px 0 #000,
+		-1px 1px 0 #000,
+		1px 1px 0 #000;
+}
 
 .containerpad .title {
   text-align: center;
@@ -107,8 +117,6 @@ body {
   width: 290px;
   display: grid;
   position: absolute;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-  grid-auto-rows: 1fr 1fr 1fr 1fr 1fr;
   padding: 20px;
 }
 
