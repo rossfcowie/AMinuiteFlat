@@ -1,4 +1,70 @@
-/*
-Developer: Ross Cowie (Arumage)
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <link rel="stylesheet" href="css/style.css"  />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+      crossorigin="anonymous"
+    />
+    <title>A Minuite Flat</title>
 
-*/
+
+
+  </head>
+
+  <body>
+    <div id='countdown'></div>
+    <div id="content" class="grid-container" onClick="show(board)"> 
+
+    </div>
+
+    <script src="js/create.js"></script>
+    <script src="js/display.js"></script>
+    <script src="js/win.js"></script>
+    <script>
+
+      window.onload = function() {
+          reset();
+      }
+      function reset(){
+        var difficulty = null;
+    
+        countdown();
+        do {
+         difficulty =  parseInt(prompt("Please select a difficulty", "1"));
+        } while (difficulty == null)
+        seconds = 60;
+        gridsetup(8);
+        show(create(8,difficulty));
+      
+      }
+      function countdown() {
+    interval = setInterval(function() {
+        
+        if(iswin(board)){
+                win(seconds);
+                return;
+        }
+        if(seconds == 0) {
+                loss(` time's up.`);
+                return;
+
+        }
+        var second_text = seconds >= 1 ? 'seconds' : 'second';
+        timebox.innerHTML = seconds + ' ' + second_text + ' remaining';
+        seconds-=1;
+    }, 1000);
+}
+      
+      </script>   
+    </body>
+
+
+    </html>
