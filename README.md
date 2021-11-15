@@ -1,7 +1,7 @@
-# AMinuiteFlat
+# AMinuteFlat
 A simple javascript game.
 
-AMinuiteFlat is a simple javascript game created for the One Minuite Jam on Itch.io (https://itch.io/jam/one-minute-jam)
+AMinuteFlat is a simple javascript game created for the One Minute Jam on Itch.io (https://itch.io/jam/one-minute-jam)
 
 15th november update.
 version 0.1 complete
